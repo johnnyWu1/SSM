@@ -43,6 +43,8 @@ public class LuceneIndex {
 		SmartChineseAnalyzer analyzer=new SmartChineseAnalyzer();
 		IndexWriterConfig iwc=new IndexWriterConfig(analyzer);
 		IndexWriter writer=new IndexWriter(dir, iwc);
+		
+		
 		return writer;
 	}
 
@@ -103,7 +105,7 @@ public class LuceneIndex {
 		/**
 		 * 注意的是查询索引的位置得是存放索引的位置，不然会找不到。
 		 */
-		dir= FSDirectory.open(Paths.get("C://lucene"));
+		dir= FSDirectory.open(Paths.get("D://Programs//lucene-5.5.0"));
 		IndexReader reader = DirectoryReader.open(dir);
 		IndexSearcher is=new IndexSearcher(reader);
 		BooleanQuery.Builder booleanQuery = new BooleanQuery.Builder();
